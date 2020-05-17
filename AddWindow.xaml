@@ -1,0 +1,27 @@
+﻿<Window x:Class="TaskTracker.AddWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:TaskTracker"
+        mc:Ignorable="d"
+        Title="AddWindow" Height="450" Width="800">
+    <Grid>
+        <Button Content="Add"   HorizontalAlignment="Left" Margin="70,329,0,0" VerticalAlignment="Top" Height="40" Width="90" Click="Button_Click"/>
+        <Button Content="Cancel" HorizontalAlignment="Left" Margin="290,329,0,0" VerticalAlignment="Top" Height="40" Width="90" Click="Button_Click_1"/>
+        <TextBox Name="TaskName"  HorizontalAlignment="Left" Margin="75,89,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="305" Foreground="#FF191717" Background="#FFF3E7E7"/>
+        <TextBox Name="StartedOn" HorizontalAlignment="Left" Margin="75,133,0,0"  VerticalAlignment="Top" Width="305" Foreground="#FF191717" Background="#FFF3E7E7"/>
+        <TextBox Name ="Status" HorizontalAlignment="Left" Margin="75,179,0,0"  VerticalAlignment="Top" Width="305" Foreground="#FF191717" Background="#FFF3E7E7"/>
+        <TextBox Name ="ETA"  HorizontalAlignment="Left" Margin="75,228,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="305" Foreground="#FF191717" Background="#FFF3E7E7"/>
+        <Grid Margin="-5,4,5,-4">
+
+            <TextBlock Name ="DisplayBox" HorizontalAlignment="Left" Margin="465,0,0,0"  VerticalAlignment="Center" Height="265" Width="250" Background="#FFDBE0AD"/>
+            <Label Content="Task Name" HorizontalAlignment="Left" Margin="77,58,0,0" VerticalAlignment="Top"/>
+            <Label Content="Started on " HorizontalAlignment="Left" Margin="78,104,0,0" VerticalAlignment="Top"/>
+            <Label Content="ETA" HorizontalAlignment="Left" Margin="80,153,0,0" VerticalAlignment="Top"/>
+            <Label Content="Status" HorizontalAlignment="Left" Margin="81,199,0,0" VerticalAlignment="Top"/>
+
+        </Grid>
+
+    </Grid>
+</Window>
