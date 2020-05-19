@@ -9,11 +9,16 @@
     <Grid Height="414">
         <Button Content="ADD TASK" HorizontalAlignment="Left" Margin="35,34,0,0" VerticalAlignment="Top" Height="50" Width="105" Click="Button_Click"/>
         <Button Content="REMOVE TASK " HorizontalAlignment="Left" Margin="170,34,0,0" VerticalAlignment="Top" Height="50" Width="105" RenderTransformOrigin="0.619,0.501" Click="Button_Click_1"/>
-       
+        <Button Content="MARK COMPLETE " Click="On_mark_Complete_Click" HorizontalAlignment="Left" Margin="305,34,0,0" VerticalAlignment="Top" Height="50" Width="105" RenderTransformOrigin="0.619,0.501" />
+        <Button Content="COMPLETED LIST " Click="On_mark_CompleteList_Click" HorizontalAlignment="Left" Margin="435,34,0,0" VerticalAlignment="Top" Height="50" Width="105" RenderTransformOrigin="0.619,0.501" />
         <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="43*"/>
+                <ColumnDefinition Width="117*"/>
+            </Grid.ColumnDefinitions>
 
-            <DataGrid Name="grdTask" Margin="56,134,45,50" SelectionChanged="grdTask_SelectionChanged" IsReadOnly="True" />
-          
+            <DataGrid Name="grdTask" Margin="56,134,45,50" SelectionChanged="grdTask_SelectionChanged" IsReadOnly="True" Grid.ColumnSpan="2" />
+
 
 
 

@@ -7,10 +7,14 @@
         mc:Ignorable="d"
         Title="RemovePage" Height="450" Width="800">
     <Grid>
-        <Label HorizontalAlignment="Left" Margin="75,59,0,0" Content="Click on Grid item to remove" VerticalAlignment="Top" Width="200" />
-        <DataGrid Name ="deleteTaskGrid"  Margin="25,109,90,145" SelectionChanged="DataGrid_SelectionChanged" IsReadOnly="True"/>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="13*"/>
+            <ColumnDefinition Width="27*"/>
+        </Grid.ColumnDefinitions>
+        <Label HorizontalAlignment="Left" Margin="75,59,0,0" Content="Click on Grid item to remove" VerticalAlignment="Top" Width="200" Grid.ColumnSpan="2" />
+        <DataGrid Name ="deleteTaskGrid"  Margin="25,109,90,145" SelectionChanged="DataGrid_SelectionChanged" IsReadOnly="True" Grid.ColumnSpan="2"/>
         <Button  Content="Cancel"  Name = "Cancel_button" HorizontalAlignment="Left" Margin="50,324,0,0" VerticalAlignment="Top" Height="40" Width="90" Click="Cancel_button_Click">
-        
+
         </Button>
 
 

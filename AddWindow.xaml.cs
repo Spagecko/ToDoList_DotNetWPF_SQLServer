@@ -52,6 +52,7 @@ namespace TaskTracker
         
        public bool validateData(string pTaskName,  string pStartedon, string pEta, string pStatus) // basic validatation for now 
         {
+            
             if(String.IsNullOrEmpty(pTaskName)||  String.IsNullOrEmpty(pStartedon)  || String.IsNullOrEmpty(pEta)|| String.IsNullOrEmpty(pStatus) )  // if any are blank
             { return false; }
 
@@ -69,13 +70,21 @@ namespace TaskTracker
             string CmdString = string.Empty;
 
             using (SqlConnection con = new SqlConnection(ConString))
-
             {
+                Console.WriteLine("ETA");
+                Console.WriteLine(pEta);
+                Console.WriteLine("CURRENT STATE");
+                Console.WriteLine(pStatus);
                 con.Open();
-
-                CmdString = " INSERT Task_Table VALUES('"+RandId+"','"+pTaskName+"','"+pStartedon+"','"+pEta+"','"+pStatus+"' )";
-
+                string temp = "temp"; // till i create user accounts 
+                CmdString = " INSERT INTO New_Task_Table ( UserID, AssignedBy, TaskName, DateStarted, ETA, CurrentState  ) VALUES(@UserID, @AssignedBy, @TaskName, @DateStarted, @ETA, @CurrentState )";
                 SqlCommand cmd = new SqlCommand(CmdString, con);
+                cmd.Parameters.AddWithValue("@UserID", temp);
+                cmd.Parameters.AddWithValue("@AssignedBy", temp);
+                cmd.Parameters.AddWithValue("@TaskName", pTaskName);
+                cmd.Parameters.AddWithValue("@DateStarted", pStartedon);
+                cmd.Parameters.AddWithValue("@ETA", pEta);
+                cmd.Parameters.AddWithValue("@CurrentState", pStatus);
                 cmd.ExecuteNonQuery();
                 con.Close(); // close connection
 
